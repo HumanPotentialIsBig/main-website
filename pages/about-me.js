@@ -32,6 +32,15 @@ export default function About() {
           I share ideas that naturally draw me in and might spark some inspiration for anyone who visits this space.
         </p>
       </div>
+
+      {/** Video */}
+      <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-lg max-w-sm mx-auto">
+        <video
+          src="/me_talking_intro.MP4"
+          controls
+          className="w-full rounded-2xl shadow-lg"
+        />
+      </div>
     </Layout>
   )
 }

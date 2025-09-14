@@ -33,7 +33,7 @@ export default function Home({ posts }) {
   const visionModules = [
         {
           title: "Vision einer möglichen Zukunft",
-          description: "Interconnected hubs of societies living with(in) nature, using organic material to build cities and societes.",
+          description: "Interconnected hubs of societies living with(in) nature, using organic material to build cities and societies.",
           imageSrc: "/images/zukunftsvorstellung.jpeg",
           link: "/vision-parts/possible-future-vision",
           image_center: "object-center"
