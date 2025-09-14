@@ -75,7 +75,7 @@ export default function Home({ posts }) {
 
         {/* small header elaboration */}  
         <p className="text-lg md:text-xl  max-w-3xl mx-auto">
-          We're not living up to our potential...but what if we did? This platform explores exactly that by shining light on visions, ideas, and projects delving into the human potential.</p>
+          We're not living up to our potential...<br></br><span className='font-bold'>But what if we did?</span><br></br> This platform explores exactly that by shining light on visions, ideas, and projects delving into the human potential.</p>
 
 
         {/** Vision Cards */}
