@@ -3,14 +3,14 @@ import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 import Layout from '../../components/Layout'
+import TextBubble from '../../components/TextBubble'
 
 export default function BlogPost({ frontmatter, content }) {
   return (
-    <Layout>
-      <article className="prose lg:prose-xl">
-        <h1>{frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: marked(content) }} />
-      </article>
+      <Layout>
+        <TextBubble  title={frontmatter.title}>
+          <div dangerouslySetInnerHTML={{ __html: marked(content) }} />
+        </TextBubble>     
     </Layout>
   )
 }

@@ -35,7 +35,7 @@ export default function Home({ posts }) {
           title: "Vision einer möglichen Zukunft",
           description: "Interconnected hubs of societies living with(in) nature, using organic material to build cities and societes.",
           imageSrc: "/images/zukunftsvorstellung.jpeg",
-          link: "/",
+          link: "/vision-parts/possible-future-vision",
           image_center: "object-center"
         },
         {
@@ -46,14 +46,14 @@ export default function Home({ posts }) {
             </span>
           ),
           imageSrc: "/images/das_potenzial_von_100_jahren.jpeg",
-          link: "/",
+          link: "/vision-parts/100-year-potential",
           image_center: "object-top"
         },
         {
           title: "Haltung zur Zukunft: Aussicht 2080",
           description: "Krisen kommen. Fällt man in ein passives Nichts-Tun oder trägt man aktiv zu einer positiven Zukunft bei?",
           imageSrc: "/images/zugang_zu_zukunft.jpeg",
-          link: "/",
+          link: "/vision-parts/zukunftshaltung",
           image_center: "object-top"
         }
       ];
