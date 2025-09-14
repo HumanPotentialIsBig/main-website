@@ -35,7 +35,7 @@ export default function Home({ posts }) {
           title: "Vision einer möglichen Zukunft",
           description: "Interconnected hubs of societies living with(in) nature, using organic material to build cities and societes.",
           imageSrc: "/images/zukunftsvorstellung.jpeg",
-          link: "/vision/human-potential",
+          link: "/",
           image_center: "object-center"
         },
         {
@@ -46,14 +46,14 @@ export default function Home({ posts }) {
             </span>
           ),
           imageSrc: "/images/das_potenzial_von_100_jahren.jpeg",
-          link: "/vision/urban-futures",
+          link: "/",
           image_center: "object-top"
         },
         {
           title: "Haltung zur Zukunft: Aussicht 2080",
           description: "Krisen kommen. Fällt man in ein passives Nichts-Tun oder trägt man aktiv zu einer positiven Zukunft bei?",
           imageSrc: "/images/zugang_zu_zukunft.jpeg",
-          link: "/vision/society-life",
+          link: "/",
           image_center: "object-top"
         }
       ];
@@ -79,7 +79,7 @@ export default function Home({ posts }) {
 
 
         {/** Vision Cards */}
-        <section className="flex flex-wrap justify-center gap-24 mt-12">
+        <section className="flex flex-wrap justify-center gap-24 mt-12 mb-20">
           {visionModules.map((module) => (
             <VisionModule
               key={module.link}
@@ -94,7 +94,7 @@ export default function Home({ posts }) {
         
         {/* Button */}
         <div className="mt-8">
-          <Link href={ROUTES.BLOG.path} className="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-xl shadow hover:bg-yellow-500 transition">
+          <Link href={ROUTES.BLOG.path} className="px-8 py-4 bg-yellow-400 text-black font-semibold rounded-xl shadow hover:bg-yellow-500 transition">
           Explore more Ideas</Link>
         </div>
       </section>
