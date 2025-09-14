@@ -27,7 +27,7 @@ export default function Layout({ children }) {
         </Link>
         
         <div className="space-x-4 text-gray-700">
-          <Link href={ROUTES.HOME.path} className="hover:text-yellow-400 transition">{ROUTES.HOME.name}</Link>
+          {/** <Link href={ROUTES.HOME.path} className="hover:text-yellow-400 transition">{ROUTES.HOME.name}</Link> */}
           <Link href={ROUTES.ABOUT.path} className="hover:text-yellow-400 transition">{ROUTES.ABOUT.name}</Link>
           <Link href={ROUTES.BLOG.path} className="hover:text-yellow-400 transition">{ROUTES.BLOG.name}</Link>
           <Link href={ROUTES.PROJECTS.path} className="hover:text-yellow-400 transition">{ROUTES.PROJECTS.name}</Link>

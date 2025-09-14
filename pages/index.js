@@ -39,10 +39,10 @@ export default function Home({ posts }) {
           image_center: "object-center"
         },
         {
-          title: "Das Potenzial von 100 Jahren",
+          title: "Das Potenzial in 100 Jahren",
           description: (
             <span>
-              Im Verlauf eines Lebens kann und wird sich die Welt zwangsläufig verändern...<br /><span className='font-bold'>1925 <ArrowRightIcon className="inline w-4 h-4 mx-1" /> 2025 <ArrowRightIcon className="inline w-4 h-4 mx-1" /> 2125 ?</span>
+              Im Verlauf eines Menschenlebens kann und wird sich die Welt zwangsläufig verändern...<br /><span className='font-bold'>1925 <ArrowRightIcon className="inline w-4 h-4 mx-1" /> 2025 <ArrowRightIcon className="inline w-4 h-4 mx-1" /> 2125 ?</span>
             </span>
           ),
           imageSrc: "/images/das_potenzial_von_100_jahren.jpeg",
