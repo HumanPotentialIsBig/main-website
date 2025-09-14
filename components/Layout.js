@@ -4,8 +4,8 @@ import Link from 'next/link';
 {/* Page Name Variables */}
 export const ROUTES = {
   HOME: { name: "Home", path: "/" },
-  ABOUT: { name: "About Me", path: "/about-me" },
-  BLOG: { name: "Impulses", path: "/visions" },
+  ABOUT: { name: "About", path: "/about-me" },
+  BLOG: { name: "Impulse", path: "/visions" },
   PROJECTS: { name: "Projects", path: "/projects" },
 };
 
