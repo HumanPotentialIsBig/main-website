@@ -75,7 +75,7 @@ export default function Home({ posts }) {
 
         {/* small header elaboration */}  
         <p className="text-lg md:text-xl  max-w-3xl mx-auto">
-          A living platform for visions, ideas, and projects exploring human potential.</p>
+          We're not living up to our potential...but what if we did? This platform explores exactly that by shining light on visions, ideas, and projects delving into the human potential.</p>
 
 
         {/** Vision Cards */}
