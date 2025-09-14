@@ -4,6 +4,10 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 import Head from 'next/head'
 import Layout from '../components/Layout'
+import { ROUTES } from '../components/Layout'
+import VisionModule from "../components/VisionModule";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { theme } from "../theme";
 
 
 // --- Utility to Fetch Posts ---
@@ -24,30 +28,80 @@ export async function getStaticProps() {
 
 // --- Home Page ---
 export default function Home({ posts }) {
+
+  // The different dive-in vision modules
+  const visionModules = [
+        {
+          title: "Vision einer möglichen Zukunft",
+          description: "Interconnected hubs of societies living with(in) nature, using organic material to build cities and societes.",
+          imageSrc: "/images/zukunftsvorstellung.jpeg",
+          link: "/vision/human-potential",
+          image_center: "object-center"
+        },
+        {
+          title: "Das Potenzial von 100 Jahren",
+          description: (
+            <span>
+              Im Verlauf eines Lebens kann und wird sich die Welt zwangsläufig verändern...<br /><span className='font-bold'>1925 <ArrowRightIcon className="inline w-4 h-4 mx-1" /> 2025 <ArrowRightIcon className="inline w-4 h-4 mx-1" /> 2125 ?</span>
+            </span>
+          ),
+          imageSrc: "/images/das_potenzial_von_100_jahren.jpeg",
+          link: "/vision/urban-futures",
+          image_center: "object-top"
+        },
+        {
+          title: "Haltung zur Zukunft: Aussicht 2080",
+          description: "Krisen kommen. Fällt man in ein passives Nichts-Tun oder trägt man aktiv zu einer positiven Zukunft bei?",
+          imageSrc: "/images/zugang_zu_zukunft.jpeg",
+          link: "/vision/society-life",
+          image_center: "object-top"
+        }
+      ];
+
   return (
+    
     <Layout>
       <Head>
         <title>Human Potential Is Big</title>
       </Head>
       {/* style={{ backgroundImage: "url('/images/Human-Potential-Tree-Symbolism.jpeg')" }}*/}
+      
       <section className="text-center py-20">
         {/* Main Title */}
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-6">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ fontFamily: theme.fonts.body, fontWeight: 600 }}>
           Human Potential Is Big
         </h1>
         {/* <h1 classname="text-5xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent">Human Potential Is Big</h1> */}
 
         {/* small header elaboration */}  
         <p className="text-lg md:text-xl  max-w-3xl mx-auto">
-          A living platform of visions, ideas, and projects exploring human potential.</p>
+          A living platform for visions, ideas, and projects exploring human potential.</p>
 
+
+        {/** Vision Cards */}
+        <section className="flex flex-wrap justify-center gap-24 mt-12">
+          {visionModules.map((module) => (
+            <VisionModule
+              key={module.link}
+              title={module.title}
+              description={module.description}
+              imageSrc={module.imageSrc}
+              link={module.link}
+              image_center={module.image_center}
+            />
+          ))}
+        </section>
+        
         {/* Button */}
         <div className="mt-8">
-          <Link href="/blog" className="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-xl shadow hover:bg-yellow-500 transition">
-          Explore Ideas</Link>
+          <Link href={ROUTES.BLOG.path} className="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-xl shadow hover:bg-yellow-500 transition">
+          Explore more Ideas</Link>
         </div>
       </section>
 
+
+      {/** Getting the latest posts */}
+      {/**
       <section className="mt-20">
         <h2 className="text-3xl font-bold mb-8 text-center">Latest Ideas</h2>
         <div className="grid md:grid-cols-2 gap-8">
@@ -59,60 +113,9 @@ export default function Home({ posts }) {
           ))}
         </div>
       </section>
-    </Layout>
-  )
-}
+       */}
 
-// --- About Page ---
-export function About() {
-  return (
-    <Layout>
-      <Head>
-        <title>About | Human Potential Is Big</title>
-      </Head>
-      <div className="max-w-3xl mx-auto text-center">
-        <h1 className="text-4xl font-extrabold mb-6 text-yellow-400">About</h1>
-        <p className="text-gray-700 leading-relaxed text-lg">
-          Human Potential Is Big is my personal platform to share visions, missions, and ideas with the world. It explores what humans can achieve, individually and together, through creativity, urban design, philosophy, and art. From my studies in Urban Planning to projects like OM Ganesh, this space collects and publishes thoughts that inspire me and others.
-        </p>
-      </div>
-    </Layout>
-  )
-}
-
-// --- Projects Page ---
-export function Projects() {
-  const projects = [
-    { title: 'OM Ganesh', description: 'A spiritual-artistic exploration project.', link: 'https://om-ganesh.netlify.app' },
-    { title: 'Urban Planning Portfolio', description: 'My portfolio during my studies.', link: '#' },
-  ]
-
-  return (
-    <Layout>
-      <Head>
-        <title>Projects | Human Potential Is Big</title>
-      </Head>
-      <h1 className="text-4xl font-extrabold mb-8 text-center text-yellow-400">Projects</h1>
-    </Layout>
-  )
-}
-
-// --- Blog Index ---
-export function BlogIndex({ posts }) {
-  return (
-    <Layout>
-      <Head>
-        <title>Blog | Human Potential Is Big</title>
-      </Head>
-      <h1 className="text-4xl font-extrabold mb-8 text-center text-yellow-400">Ideas & Visions</h1>
-      <div className="space-y-8">
-        {posts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="block p-8 rounded-2xl shadow-lg bg-white hover:shadow-2xl transform hover:scale-105 transition">
-            <h2 className="text-2xl font-bold mb-2 text-gray-900">{post.frontmatter.title}</h2>
-            <p className="text-gray-600">{post.frontmatter.excerpt}</p>
-          </Link>
-        ))}
-      </div>
+       
     </Layout>
   )
 }

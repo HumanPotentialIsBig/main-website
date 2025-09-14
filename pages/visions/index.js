@@ -4,12 +4,13 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
+import { ROUTES } from '../../components/Layout'
 
 export default function BlogIndex({ posts }) {
   return (
     <Layout>
-      <Head><title>Blog | Human Potential Is Big</title></Head>
-      <h1 className="text-3xl md:text-5xl font-extrabold mb-8">Ideas & Visions</h1>
+      <Head><title>{ROUTES.BLOG.name} | Human Potential Is Big</title></Head>
+      <h1 className="text-3xl md:text-5xl font-extrabold mb-8">{ROUTES.BLOG.name} & Ideas</h1>
       <div className="space-y-6">
         {posts.map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`} className="block p-6 rounded-2xl shadow bg-white hover:shadow-lg transition">

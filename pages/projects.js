@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
+import { ROUTES } from '../components/Layout'
 
 export default function Projects() {
   const projects = [
@@ -18,7 +19,7 @@ export default function Projects() {
 
   return (
     <Layout>
-      <Head><title>Projects | Human Potential Is Big</title></Head>
+      <Head><title>{ROUTES.PROJECTS.name} | Human Potential Is Big</title></Head>
       <h1 className="text-3xl md:text-5xl font-extrabold mb-8">Projects</h1>
       <div className="grid md:grid-cols-2 gap-8">
         {projects.map((proj) => (

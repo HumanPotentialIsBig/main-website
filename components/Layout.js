@@ -1,6 +1,14 @@
 // --- components/Layout.js ---
 import Link from 'next/link';
 
+{/* Page Name Variables */}
+export const ROUTES = {
+  HOME: { name: "Home", path: "/" },
+  ABOUT: { name: "About Me", path: "/about-me" },
+  BLOG: { name: "Impulses", path: "/visions" },
+  PROJECTS: { name: "Projects", path: "/projects" },
+};
+
 export default function Layout({ children }) {
   return (
     <div className="relative min-h-screen font-sans text-gray-900">
@@ -13,14 +21,16 @@ export default function Layout({ children }) {
 
       {/** Nav Bar */}    
       <nav className="p-4 flex justify-between items-center shadow bg-white sticky top-0 z-10">
+        
         <Link href="/" className="font-extrabold text-xl md:text-2xl bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">
             Human Potential Is Big
         </Link>
+        
         <div className="space-x-4 text-gray-700">
-          <Link href="/" className="hover:text-yellow-400 transition">Home</Link>
-          <Link href="/about" className="hover:text-yellow-400 transition">About</Link>
-          <Link href="/blog" className="hover:text-yellow-400 transition">Blog</Link>
-          <Link href="/projects" className="hover:text-yellow-400 transition">Projects</Link>
+          <Link href={ROUTES.HOME.path} className="hover:text-yellow-400 transition">{ROUTES.HOME.name}</Link>
+          <Link href={ROUTES.ABOUT.path} className="hover:text-yellow-400 transition">{ROUTES.ABOUT.name}</Link>
+          <Link href={ROUTES.BLOG.path} className="hover:text-yellow-400 transition">{ROUTES.BLOG.name}</Link>
+          <Link href={ROUTES.PROJECTS.path} className="hover:text-yellow-400 transition">{ROUTES.PROJECTS.name}</Link>
         </div>
       </nav>
 
