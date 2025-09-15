@@ -5,7 +5,7 @@ import VisionModule from "../components/VisionModule";
 
 export default function Projects() {
   const projects = [
-    { title: 'Om Ganesh',
+    { title: 'Om Ganesh', 
       description: 'Om-Ganesh: A quality-based trust certificate.',
       link: 'https://om-ganesh.netlify.app',
       image: '/images/Logo-Om-Ganesh.jpeg'

@@ -1,0 +1,27 @@
+/* galleryScrollbar.css */
+
+/* For WebKit browsers (Chrome, Edge, Safari) */
+.gallery-scroll::-webkit-scrollbar {
+  height: 10px; /* horizontal scrollbar height */
+}
+
+.gallery-scroll::-webkit-scrollbar-track {
+  background: #fdf7f0; /* very light cream */
+  border-radius: 9999px; /* fully rounded */
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb {
+  background: #d6cfc1; /* pastel/soft brown */
+  border-radius: 9999px;
+  transition: background 0.3s;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb:hover {
+  background: #bfb6a5; /* slightly darker on hover */
+}
+
+/* For Firefox */
+.gallery-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #d6cfc1 #fdf7f0;
+}

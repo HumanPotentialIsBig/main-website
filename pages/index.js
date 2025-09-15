@@ -32,9 +32,9 @@ export default function Home({ posts }) {
   // The different dive-in vision modules
   const visionModules = [
         {
-          title: "Vision einer möglichen Zukunft",
+          title: "Vision: Forest City",
           description: "Interconnected hubs of societies living with(in) nature, using organic material to build cities and societies.",
-          imageSrc: "/images/zukunftsvorstellung.jpeg",
+          imageSrc: "/images/forest-city/zukunftsvorstellung.jpeg",
           link: "/vision-parts/possible-future-vision",
           image_center: "object-center"
         },
@@ -64,9 +64,8 @@ export default function Home({ posts }) {
       <Head>
         <title>Human Potential Is Big</title>
       </Head>
-      {/* style={{ backgroundImage: "url('/images/Human-Potential-Tree-Symbolism.jpeg')" }}*/}
       
-      <section className="text-center py-20">
+      <section className="text-center py-10">
         {/* Main Title */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ fontFamily: theme.fonts.body, fontWeight: 600 }}>
           Human Potential Is Big
@@ -74,9 +73,9 @@ export default function Home({ posts }) {
         {/* <h1 classname="text-5xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent">Human Potential Is Big</h1> */}
 
         {/* small header elaboration */}  
-        <p className="text-lg md:text-xl  max-w-3xl mx-auto">
-          We're not living up to our potential...<br></br><span className='font-bold'>But what if we did?</span><br></br> This platform explores exactly that by shining light on visions, ideas, and projects delving into the human potential.</p>
-
+        <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto">
+          We know we're not living up to our potential....<br></br>»<span className="italic font-bold text-xl md:text-2xl">But what if we did?</span>«<br></br> This space explores exactly that question by shining light on visions, ideas, and projects that delve deep into the human potential.
+        </p>
 
         {/** Vision Cards */}
         <section className="flex flex-wrap justify-center gap-24 mt-12 mb-20">

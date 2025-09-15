@@ -7,7 +7,7 @@ export const ROUTES = {
   ABOUT: { name: "About", path: "/about-me" },
   BLOG: { name: "Impulse", path: "/impulses" },
   PROJECTS: { name: "Projects", path: "/projects" },
-  POSSIBLE_VISION: {name: "Possible Vision", path: "/vision-parts/possible-future-vision"}
+  
 };
 
 export default function Layout({ children }) {
