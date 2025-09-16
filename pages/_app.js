@@ -10,7 +10,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="description" content="A living platform for visions, ideas, and projects exploring human potential." />
 
         {/** web-browser tab icon */}
-        <link rel="icon" href="/logo.jpeg"/>
+        <link rel="icon" href="/logo.png"/>
 
         {/** Open Graph: social preview when sharing/forwaring on WhatsApp/Telegram for example */}
         <meta property="og:title" content="Human Potential Is Big" />

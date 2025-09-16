@@ -146,6 +146,17 @@ export default function PossibleFutureVisionPage() {
         trackMouse: true, // optional, allows mouse dragging too
         });
 
+    //Pop Animation for Mobile
+    const [popTrigger, setPopTrigger] = useState(false);
+
+    useEffect(() => {
+        if (isMobile) {
+            setPopTrigger(true);
+            const timeout = setTimeout(() => setPopTrigger(false), 400); // match animation duration
+            return () => clearTimeout(timeout);
+        }
+    }, [modalIndex, isMobile]);
+
     return(
         <Layout>
             <Head>
@@ -159,7 +170,7 @@ export default function PossibleFutureVisionPage() {
                 Humans and nature co-existing peacefully: <span className='italic'>»This could be us.«</span><br></br> A sophisticated vision of human societies living in synergy with nature.
             </p>
 
-            <div className="md: hidden flex items-center justify-center text-sm text-gray-600 italic mx-auto text-center mb-2">
+            <div className="block md:hidden flex items-center justify-center text-sm text-gray-600 italic mx-auto text-center mb-2">
                 <span>Tap on images to see more</span>
                 <MagnifyingGlassIcon className="w-4 h-5 ml-1"/>
             </div>
@@ -201,16 +212,15 @@ export default function PossibleFutureVisionPage() {
                         </button>
                     
 
-                    {/** Modal Gallery View: Image + DropDownDescription */}
-                    <div className="flex flex-col items-center w-full space-y-2 md:space-y-3">
-                        <SwitchTransition>
-                            <CSSTransition
-                            key={sortedImages[modalIndex].id}
-                            timeout={500}
-                            classNames={isMobile ? "pop" : "fade"}
+                    {/** Image container with swipe/pop/fade animation */}
+                        {isMobile ? (
+                            // Mobile: manual pop animation
+                            <div
+                                {...handlers}
+                                className={`cursor-pointer transition-transform duration-400 ${
+                                    popTrigger ? "scale-0" : "scale-100"
+                                }`}
                             >
-                            {/* Image & div for Swipe-ability */}
-                            <div {...handlers} className="flex flex-col items-center w-full space-y-2 md:space-y-3">
                                 <img
                                     src={sortedImages[modalIndex].src}
                                     alt={sortedImages[modalIndex].title}
@@ -221,8 +231,28 @@ export default function PossibleFutureVisionPage() {
                                     }}
                                 />
                             </div>
-                            </CSSTransition>
-                        </SwitchTransition>
+                        ) : (
+                            // Desktop: fade animation
+                            <SwitchTransition>
+                                <CSSTransition
+                                    key={sortedImages[modalIndex].id}
+                                    timeout={500}
+                                    classNames="fade"
+                                >
+                                    <div className="cursor-pointer">
+                                        <img
+                                            src={sortedImages[modalIndex].src}
+                                            alt={sortedImages[modalIndex].title}
+                                            className="max-h-[70vh] max-w-[90%] rounded-2xl shadow-lg mb-2 md:mb-0 cursor-pointer"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setCaptionOpen(!isCaptionOpen);
+                                            }}
+                                        />
+                                    </div>
+                                </CSSTransition>
+                            </SwitchTransition>
+                        )}
                     
                     
                         <DropDownDescription 
@@ -243,26 +273,7 @@ export default function PossibleFutureVisionPage() {
                                 </button>
                             }
                         />
-                    </div>
-                    
-                    {/* Description
-                    <div
-                        className={`overflow-hidden transition-all duration-700 ease-in-out ${
-                            isCaptionOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
-                        }`}
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <div className="bg-white bg-opacity-90 rounded-xl p-4 max-w-3xl text-center shadow-inner text-gray-800">
-                            <h3 className="text-2xl font-semibold mb-2">
-                                {sortedImages[modalIndex].title}
-                            </h3>
-                            <p>
-                                {sortedImages[modalIndex].description}
-                            </p>
-                        </div>
-                    </div>
-                     */}
-                </div>
+                    </div>            
             )}
         </Layout>
     );
