@@ -3,6 +3,7 @@ import Head from 'next/head'
 import PhotoGalleryItem from "../../components/PhotoGalleryItem";
 import { useState, useEffect  } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
+import DropDownDescription from "../../components/DropDownDescription"
 
 
 const galleryImages = [
@@ -136,21 +137,23 @@ export default function PossibleFutureVisionPage() {
             <h1 className="text-5xl font-bold mb-2 text-center">
                 Vision: Forest-City
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-center text-gray-800">
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 text-center text-gray-800">
                 Humans and nature co-existing peacefully: <span className='italic'>»This could be us.«</span><br></br> A sophisticated vision of human societies living in synergy with nature.
             </p>
 
             {/** "flex overflow-x-auto pb-6 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100" */}
             {/* Horizontal scroll container */}
-            <div className="flex flex-wrap content-start gap-4 overflow-x-auto pb-6 gallery-scroll">
+            <div className="flex flex-wrap justify-center gap-4 overflow-x-auto pb-6 gallery-scroll">
                 {sortedImages.map((img, idx) => (
-                    <PhotoGalleryItem
-                        key={idx}
-                        imageSrc={img.src}
-                        title={img.title}
-                        description={img.description}
-                        onClick={() => openModal(idx)} // open modal
-                    />
+                    <div className='flex-shrink-0 w-64 mr-5 mt-2'>
+                        <PhotoGalleryItem
+                            key={idx}
+                            imageSrc={img.src}
+                            title={img.title}
+                            description={img.description}
+                            onClick={() => openModal(idx)} // open modal
+                        />
+                    </div>
                 ))}
             </div>
 
@@ -184,7 +187,7 @@ export default function PossibleFutureVisionPage() {
                             <img
                                 src={sortedImages[modalIndex].src}
                                 alt={sortedImages[modalIndex].title}
-                                className="max-h-[70%] max-w-[90%] rounded-2xl shadow-lg mb-4 cursor-pointer"
+                                className="max-h-[70%] max-w-[90%] rounded-2xl shadow-lg mb-2 md:mb-0 cursor-pointer"
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     setCaptionOpen(!isCaptionOpen);
@@ -192,19 +195,26 @@ export default function PossibleFutureVisionPage() {
                             />
                         </CSSTransition>
                     </SwitchTransition>
-
-                    {/* Optional Expand Button */}
-                    <button
-                        className="mb-2 text-white underline"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setCaptionOpen(!isCaptionOpen);
-                        }}
-                    >
-                        {isCaptionOpen ? "Collapse" : sortedImages[modalIndex].title}
-                    </button>
-
-                    {/* Caption */}
+                    
+                    
+                    <DropDownDescription 
+                        title={sortedImages[modalIndex].title}
+                        description={sortedImages[modalIndex].description}
+                        isOpen={isCaptionOpen}
+                        setIsOpen={setCaptionOpen}
+                        button={
+                            <button
+                                className="mb-2 text-white underline text-lg md:text-xl"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setCaptionOpen(!isCaptionOpen);
+                                }}
+                            >
+                                {isCaptionOpen ? "Collapse" : sortedImages[modalIndex].title}
+                            </button>
+                        }
+                    />
+                    {/* Description
                     <div
                         className={`overflow-hidden transition-all duration-700 ease-in-out ${
                             isCaptionOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
@@ -220,6 +230,7 @@ export default function PossibleFutureVisionPage() {
                             </p>
                         </div>
                     </div>
+                     */}
                 </div>
             )}
         </Layout>

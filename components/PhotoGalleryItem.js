@@ -1,4 +1,6 @@
 import { useState } from "react";
+import DropDownDescription from "./DropDownDescription.js"
+import DropdownDescription from "./DropDownDescription.js";
 
 export default function PhotoGalleryItem({
   imageSrc,
@@ -7,14 +9,13 @@ export default function PhotoGalleryItem({
   onClick
 }) {
 
-const [isOpen, setIsOpen] = useState(false);
 const [isDescriptionOpen, setDescriptionOpen] = useState(false);
 
   return (
     <div className="flex-shrink-0 w-64 mr-6">
       {/* Image */}
       <div
-        className="rounded-2xl overflow-hidden shadow-lg cursor-pointer hover:scale-105 transform transition-transform"
+        className="rounded-2xl overflow-hidden shadow-lg cursor-pointer hover:scale-105 hover:shadow-xl transform transition-transform"
         onClick={onClick} // <-- pass click handler from parent
       >
         <img
@@ -24,19 +25,16 @@ const [isDescriptionOpen, setDescriptionOpen] = useState(false);
         />
       </div>
 
-      {/* Dropdown Description */}
-        <div
-            className={`overflow-hidden transition-all duration-700 ${
-            isDescriptionOpen ? "max-h-40 mt-2" : "max-h-0"
-            }`}
-            >
-            <div className="p-3 bg-white rounded-xl shadow-inner text-gray-700 text-sm">
-                <h3 className="font-semibold mb-1">{title}</h3>
-                <p>{description}</p>
-            </div>
-        </div>
 
+        <DropDownDescription
+            title={title}
+            description={description}
+            isOpen={isDescriptionOpen}      
+            setIsOpen={setDescriptionOpen}
+            wrapperClassName="mt-0 mb-5"
+        />
 
+    {/**
         <div className="flex justify-center mt-3">
             <button
                 onClick={() => setDescriptionOpen(!isDescriptionOpen)}
@@ -48,6 +46,19 @@ const [isDescriptionOpen, setDescriptionOpen] = useState(false);
                 {isDescriptionOpen ? "Collapse" : title}
             </button>
         </div>
+        
+        <div
+           className={`flex justify-center mt-3 overflow-hidden transition-all duration-700 ease-in-out ${
+            isDescriptionOpen ? "max-h-40 mt-2" : "max-h-0"
+            }`}
+            >
+            <div className="p-3 bg-white rounded-xl shadow-inner text-gray-700 text-sm text-center">
+                <h3 className="text-md md:text-lg font-semibold">{title}</h3>
+                <p>{description}</p>
+            </div>
+      </div>
+       */}
+
     </div>
   );
 }
