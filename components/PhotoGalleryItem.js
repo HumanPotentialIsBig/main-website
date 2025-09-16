@@ -1,6 +1,5 @@
 import { useState } from "react";
 import DropDownDescription from "./DropDownDescription.js"
-import DropdownDescription from "./DropDownDescription.js";
 
 export default function PhotoGalleryItem({
   imageSrc,
@@ -31,7 +30,7 @@ const [isDescriptionOpen, setDescriptionOpen] = useState(false);
             description={description}
             isOpen={isDescriptionOpen}      
             setIsOpen={setDescriptionOpen}
-            wrapperClassName="mt-0 mb-5"
+            wrapperClassName="mb-5"
         />
 
     {/**

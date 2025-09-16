@@ -74,7 +74,7 @@ export default function Home({ posts }) {
 
         {/* small header elaboration */}  
         <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto">
-          We know we're not living up to our potential....<br className='mb-2'></br><span className="italic font-bold text-2xl md:text-2xl bg-white rounded-lg bg-opacity-60 px-3 py-1">»But what if we did?«</span> <br className='mb-2'></br>
+          We know we're not living up to our potential....<br className='mb-2'></br><span className="italic font-bold text-xl md:text-2xl bg-white rounded-lg bg-opacity-60 px-3 py-1 my-2">»But what if we did?«</span> <br className='mb-2'></br>
           Here, I explore that question by shining light on visions, ideas, and projects that delve deep into the human potential.
         </p>
 

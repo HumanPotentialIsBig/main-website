@@ -4,7 +4,8 @@ import PhotoGalleryItem from "../../components/PhotoGalleryItem";
 import { useState, useEffect  } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import DropDownDescription from "../../components/DropDownDescription"
-
+import { useSwipeable } from 'react-swipeable';
+import { MagnifyingGlassIcon  } from "@heroicons/react/24/solid";
 
 const galleryImages = [
     {
@@ -128,6 +129,14 @@ export default function PossibleFutureVisionPage() {
     }, [modalIndex]);
 
 
+    //Make it swipeable for mobile
+    const handlers = useSwipeable({
+        onSwipedLeft: () => nextImage(),
+        onSwipedRight: () => prevImage(),
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true, // optional, allows mouse dragging too
+        });
+
     return(
         <Layout>
             <Head>
@@ -140,6 +149,11 @@ export default function PossibleFutureVisionPage() {
             <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 text-center text-gray-800">
                 Humans and nature co-existing peacefully: <span className='italic'>»This could be us.«</span><br></br> A sophisticated vision of human societies living in synergy with nature.
             </p>
+
+            <div className="md: hidden flex items-center justify-center text-sm text-gray-600 italic mx-auto text-center mb-2">
+                <span>Tap on images to see more</span>
+                <MagnifyingGlassIcon className="w-4 h-5 ml-1"/>
+            </div>
 
             {/** "flex overflow-x-auto pb-6 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100" */}
             {/* Horizontal scroll container */}
@@ -177,7 +191,7 @@ export default function PossibleFutureVisionPage() {
                             ›
                         </button>
                     
-                    <SwitchTransition>
+                    <SwitchTransition {...handlers}>
                         <CSSTransition
                         key={sortedImages[modalIndex].id}
                         timeout={500}
@@ -202,6 +216,7 @@ export default function PossibleFutureVisionPage() {
                         description={sortedImages[modalIndex].description}
                         isOpen={isCaptionOpen}
                         setIsOpen={setCaptionOpen}
+                        wrapperClassName='mt-3'
                         button={
                             <button
                                 className="mb-2 text-white underline text-lg md:text-xl"

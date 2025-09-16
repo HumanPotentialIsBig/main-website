@@ -26,7 +26,7 @@ export default function DropdownDescription({
       </div>
 
         {/** BUTTON to trigger dropdown description module */}
-        <div className={`flex justify-center mt-3 ${wrapperClassName}`}>
+        <div className={`flex justify-center ${wrapperClassName}`}>
             {button ? (
                     React.cloneElement(button, {
                         onClick: (e) => {
