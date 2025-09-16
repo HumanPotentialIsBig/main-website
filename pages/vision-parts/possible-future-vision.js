@@ -153,7 +153,7 @@ export default function PossibleFutureVisionPage() {
     useEffect(() => {
         if (isMobile && !initialLoad) {
             setPopTrigger(true);
-            const timeout = setTimeout(() => setPopTrigger(false), 800); // match animation duration
+            const timeout = setTimeout(() => setPopTrigger(false), 1000); // match animation duration
             return () => clearTimeout(timeout);
         }
         else{
@@ -221,10 +221,10 @@ export default function PossibleFutureVisionPage() {
                     {/** Image container with swipe/pop/fade animation */}
                         {isMobile ? (
                             // Mobile: manual pop animation
-                            <div className="flex items-center justify-center w-full h-full">
+                            <div className="w-full justify-evenly">
                                 <div
                                     {...handlers}
-                                    className={`cursor-pointer transition-transform duration-800 ${
+                                    className={`cursor-pointer transition-transform duration-1000 ${
                                         popTrigger ? "scale-0" : "scale-100"
                                     }`}
                                 >
