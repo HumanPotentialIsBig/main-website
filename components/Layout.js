@@ -30,7 +30,7 @@ export default function Layout({ children }) {
         <div className="space-x-4 text-gray-700">
           <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" className='flex md:hidden' />
           <link rel="icon" type="image/png" sizes="192x192" href="/logo.png" className='flex md:hidden' />
-          <Link href={ROUTES.HOME.path} className="flex md:hidden bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent hover:text-gray-600 hover:bg-white">{ROUTES.HOME.name}</Link>
+          <Link href={ROUTES.HOME.path} className="block md:hidden bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent hover:text-gray-600 hover:bg-white">{ROUTES.HOME.name}</Link>
           <Link href={ROUTES.ABOUT.path} className="hover:text-yellow-400 transition">{ROUTES.ABOUT.name}</Link>
           <Link href={ROUTES.BLOG.path} className="hover:text-yellow-400 transition">{ROUTES.BLOG.name}</Link>
           <Link href={ROUTES.PROJECTS.path} className="hover:text-yellow-400 transition">{ROUTES.PROJECTS.name}</Link>

@@ -153,7 +153,7 @@ export default function PossibleFutureVisionPage() {
     useEffect(() => {
         if (isMobile && !initialLoad) {
             setPopTrigger(true);
-            const timeout = setTimeout(() => setPopTrigger(false), 600); // match animation duration
+            const timeout = setTimeout(() => setPopTrigger(false), 800); // match animation duration
             return () => clearTimeout(timeout);
         }
         else{
@@ -220,24 +220,24 @@ export default function PossibleFutureVisionPage() {
 
                     {/** Image container with swipe/pop/fade animation */}
                         {isMobile ? (
-                            <div className="flex items-center justify-center w-full h-full">
                             // Mobile: manual pop animation
-                            <div
-                                {...handlers}
-                                className={`cursor-pointer transition-transform duration-600 ${
-                                    popTrigger ? "scale-0" : "scale-100"
-                                }`}
-                            >
-                                <img
-                                    src={sortedImages[modalIndex].src}
-                                    alt={sortedImages[modalIndex].title}
-                                    className="max-h-[70vh] max-w-[90%] rounded-2xl shadow-lg mb-2 md:mb-0 cursor-pointer"
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setCaptionOpen(!isCaptionOpen);
-                                    }}
-                                />
-                            </div>
+                            <div className="flex items-center justify-center w-full h-full">
+                                <div
+                                    {...handlers}
+                                    className={`cursor-pointer transition-transform duration-800 ${
+                                        popTrigger ? "scale-0" : "scale-100"
+                                    }`}
+                                >
+                                    <img
+                                        src={sortedImages[modalIndex].src}
+                                        alt={sortedImages[modalIndex].title}
+                                        className="max-h-[70vh] max-w-[90%] rounded-2xl shadow-lg mb-2 md:mb-0 cursor-pointer"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setCaptionOpen(!isCaptionOpen);
+                                        }}
+                                    />
+                                </div>
                             </div>
                         ) : (
                             // Desktop: fade animation
