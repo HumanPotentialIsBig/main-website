@@ -129,6 +129,15 @@ export default function PossibleFutureVisionPage() {
     }, [modalIndex]);
 
 
+    const [isMobile, setIsMobile] = useState(false);
+    //isMobile
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768); // md breakpoint
+        handleResize(); // set initial
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     //Make it swipeable for mobile
     const handlers = useSwipeable({
         onSwipedLeft: () => nextImage(),
@@ -179,56 +188,63 @@ export default function PossibleFutureVisionPage() {
                 >
                     {/* Left/Right Arrows */}
                         <button
-                            className="absolute left-2 md:left-14 text-white text-7xl top-1/2 -translate-y-1/2 font-bold"
+                            className="hidden md:block absolute left-2 md:left-14 text-white text-7xl top-1/2 -translate-y-1/2 font-bold"
                             onClick={(e) => { e.stopPropagation(); prevImage(); }}
                         >
                             ‹
                         </button>
                         <button
-                            className="absolute right-2 md:right-14 text-white text-7xl top-1/2 -translate-y-1/2 font-bold"
+                            className="hidden md:block absolute right-2 md:right-14 text-white text-7xl top-1/2 -translate-y-1/2 font-bold"
                             onClick={(e) => { e.stopPropagation(); nextImage(); }}
                         >
                             ›
                         </button>
                     
-                    <SwitchTransition {...handlers}>
-                        <CSSTransition
-                        key={sortedImages[modalIndex].id}
-                        timeout={500}
-                        classNames="fade"
-                        >
-                        {/* Image */}
-                            <img
-                                src={sortedImages[modalIndex].src}
-                                alt={sortedImages[modalIndex].title}
-                                className="max-h-[70%] max-w-[90%] rounded-2xl shadow-lg mb-2 md:mb-0 cursor-pointer"
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    setCaptionOpen(!isCaptionOpen);
-                                }}
-                            />
-                        </CSSTransition>
-                    </SwitchTransition>
-                    
-                    
-                    <DropDownDescription 
-                        title={sortedImages[modalIndex].title}
-                        description={sortedImages[modalIndex].description}
-                        isOpen={isCaptionOpen}
-                        setIsOpen={setCaptionOpen}
-                        wrapperClassName='mt-3'
-                        button={
-                            <button
-                                className="mb-2 text-white underline text-lg md:text-xl"
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    setCaptionOpen(!isCaptionOpen);
-                                }}
+
+                    {/** Modal Gallery View: Image + DropDownDescription */}
+                    <div className="flex flex-col items-center w-full space-y-2 md:space-y-3">
+                        <SwitchTransition>
+                            <CSSTransition
+                            key={sortedImages[modalIndex].id}
+                            timeout={500}
+                            classNames={isMobile ? "pop" : "fade"}
                             >
-                                {isCaptionOpen ? "Collapse" : sortedImages[modalIndex].title}
-                            </button>
-                        }
-                    />
+                            {/* Image & div for Swipe-ability */}
+                            <div {...handlers} className="flex flex-col items-center w-full space-y-2 md:space-y-3">
+                                <img
+                                    src={sortedImages[modalIndex].src}
+                                    alt={sortedImages[modalIndex].title}
+                                    className="max-h-[70vh] max-w-[90%] rounded-2xl shadow-lg mb-2 md:mb-0 cursor-pointer"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setCaptionOpen(!isCaptionOpen);
+                                    }}
+                                />
+                            </div>
+                            </CSSTransition>
+                        </SwitchTransition>
+                    
+                    
+                        <DropDownDescription 
+                            title={sortedImages[modalIndex].title}
+                            description={sortedImages[modalIndex].description}
+                            isOpen={isCaptionOpen}
+                            setIsOpen={setCaptionOpen}
+                            wrapperClassName='mt-3'
+                            button={
+                                <button
+                                    className="mb-2 text-white underline text-lg md:text-xl"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setCaptionOpen(!isCaptionOpen);
+                                    }}
+                                >
+                                    {isCaptionOpen ? "Collapse" : sortedImages[modalIndex].title}
+                                </button>
+                            }
+                        />
+                    </div>
+                    
                     {/* Description
                     <div
                         className={`overflow-hidden transition-all duration-700 ease-in-out ${

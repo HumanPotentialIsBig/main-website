@@ -21,9 +21,9 @@ export default function Layout({ children }) {
       ></div>
 
       {/** Nav Bar */}    
-      <nav className="p-4 flex ustify-around items-center text-sm md:text-base gap-2 md:gap-6 shadow bg-white sticky top-0 z-10">
+      <nav className="w-full justify-evenly p-4 flex text-sm md:text-base gap-2 md:gap-6 shadow bg-white sticky top-0 z-10">
         
-        <Link href="/" className="font-extrabold text-xl md:text-2xl bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">
+        <Link href="/" className="hidden md:flex font-extrabold text-xl md:text-2xl bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">
             Human Potential Is Big
         </Link>
         
