@@ -148,12 +148,18 @@ export default function PossibleFutureVisionPage() {
 
     //Pop Animation for Mobile
     const [popTrigger, setPopTrigger] = useState(false);
+    const [initialLoad, setInitialLoad] = useState(true);
 
     useEffect(() => {
-        if (isMobile) {
+        if (isMobile && !initialLoad) {
             setPopTrigger(true);
-            const timeout = setTimeout(() => setPopTrigger(false), 400); // match animation duration
+            const timeout = setTimeout(() => setPopTrigger(false), 600); // match animation duration
             return () => clearTimeout(timeout);
+        }
+        else{
+            // first modal open: show image immediately
+            setPopTrigger(false);
+            setInitialLoad(false);
         }
     }, [modalIndex, isMobile]);
 
@@ -214,10 +220,11 @@ export default function PossibleFutureVisionPage() {
 
                     {/** Image container with swipe/pop/fade animation */}
                         {isMobile ? (
+                            <div className="flex items-center justify-center w-full h-full">
                             // Mobile: manual pop animation
                             <div
                                 {...handlers}
-                                className={`cursor-pointer transition-transform duration-400 ${
+                                className={`cursor-pointer transition-transform duration-600 ${
                                     popTrigger ? "scale-0" : "scale-100"
                                 }`}
                             >
@@ -230,6 +237,7 @@ export default function PossibleFutureVisionPage() {
                                         setCaptionOpen(!isCaptionOpen);
                                     }}
                                 />
+                            </div>
                             </div>
                         ) : (
                             // Desktop: fade animation
