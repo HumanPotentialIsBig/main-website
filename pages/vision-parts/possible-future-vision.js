@@ -96,10 +96,12 @@ export default function PossibleFutureVisionPage() {
 
     const [modalIndex, setModalIndex] = useState(null); // null = modal closed
     const [isCaptionOpen, setCaptionOpen] = useState(false); // caption collapsed by default
+    const [isFirstOpen, setIsFirstOpen] = useState(true);
 
     const openModal = (index) => {
         setModalIndex(index);
         setCaptionOpen(false); // reset caption state when opening
+        setIsFirstOpen(true);
     };
 
     const closeModal = () => setModalIndex(null);
@@ -107,11 +109,13 @@ export default function PossibleFutureVisionPage() {
     const prevImage = () => {
         setModalIndex((prev) => (prev === 0 ? sortedImages.length - 1 : prev - 1));
         setCaptionOpen(false);
+        setIsFirstOpen(false);
     };
 
     const nextImage = () => {
         setModalIndex((prev) => (prev === sortedImages.length - 1 ? 0 : prev + 1));
         setCaptionOpen(false);
+        setIsFirstOpen(false);
     };
 
 
@@ -244,8 +248,8 @@ export default function PossibleFutureVisionPage() {
                             <SwitchTransition>
                                 <CSSTransition
                                     key={sortedImages[modalIndex].id}
-                                    timeout={500}
-                                    classNames="fade"
+                                    timeout={isFirstOpen ? 400 : 220} // smooth on open, snappy on swipe
+                                    classNames={isFirstOpen ? "fade" : (isMobile ? "pop-enter-only" : "fade")}
                                 >
                                     <div className="cursor-pointer">
                                         <img
