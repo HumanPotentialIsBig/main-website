@@ -14,7 +14,7 @@ const galleryImages = [
         title: "Cultural Space",
         description:
         "Imagine vertical gardens climbing high-rise towers, blending nature with urban living.",
-        order: 1,
+        order: 3,
     },
     {
         id: 2,
@@ -30,7 +30,7 @@ const galleryImages = [
         title: "Today + Tomorrow: Integrated",
         description:
         "Clean waterways flow through the city, creating serene landscapes and sustainable transport.",
-        order: 3,
+        order: 1,
     },
     {
         id: 4,
@@ -201,7 +201,7 @@ export default function PossibleFutureVisionPage() {
             {modalIndex !== null && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center z-50 p-4"
-                    onClick={closeModal}
+                    onClick={closeModal}    
                 >
                     {/* Left/Right Arrows */}
                         <button

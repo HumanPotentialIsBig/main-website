@@ -34,7 +34,7 @@ export default function Home({ posts }) {
         {
           title: "Vision: Forest City",
           description: "Interconnected hubs of societies living with(in) nature, using organic material to build cities and societies.",
-          imageSrc: "/images/forest-city/zukunftsvorstellung.jpeg",
+          imageSrc: "/images/forest-city/forest city in contrast with normal city.jpeg",
           link: "/vision-parts/possible-future-vision",
           image_center: "object-center"
         },
