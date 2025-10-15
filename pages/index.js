@@ -32,11 +32,13 @@ export default function Home({ posts }) {
   // The different dive-in vision modules
   const visionModules = [
         {
-          title: "Vision: Forest City",
+          title: "Vision: Forest-City",
           description: "Interconnected hubs of societies living with(in) nature, using organic material to build cities and societies.",
           imageSrc: "/images/forest-city/forest city in contrast with normal city.jpeg",
           link: "/vision-parts/possible-future-vision",
-          image_center: "object-center"
+          image_center: "object-center",
+          buttonExists: true,
+          buttonTitle: "Explore the Vision"
         },
         {
           title: "Das Potenzial in 100 Jahren",
@@ -88,15 +90,12 @@ export default function Home({ posts }) {
               imageSrc={module.imageSrc}
               link={module.link}
               image_center={module.image_center}
+              buttonExists={module.buttonExists}
+              buttonTitle={module.buttonTitle}
             />
           ))}
         </section>
         
-        {/* Button */}
-        <div className="mt-8">
-          <Link href={ROUTES.BLOG.path} className="px-8 py-4 bg-yellow-400 text-black font-semibold rounded-xl shadow hover:bg-yellow-500 transition">
-          Explore more Ideas</Link>
-        </div>
       </section>
 
 

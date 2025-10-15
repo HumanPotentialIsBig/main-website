@@ -11,25 +11,25 @@ const galleryImages = [
     {
         id: 1,
         src: "/images/forest-city/zukunftsvorstellung.jpeg",
-        title: "Cultural Space",
+        title: "Educational Space",
         description:
-        "Imagine vertical gardens climbing high-rise towers, blending nature with urban living.",
-        order: 3,
+        "Edcuation in the skies: Libraries, schools, lecture halls, book stores, cafes, etc. Imagine your institution up there!",
+        order: 5,
     },
     {
         id: 2,
         src: "/images/forest-city/semi-realisitic sophisticated forest city.jpeg",
         title: "Commercial Space",
         description:
-        "Elevated walkways wind through trees, connecting neighborhoods while keeping the forest intact.",
+        "Commercial spaces like shopping streets or malls are built around trees. Example 'Mariahilfer Straße' in Vienna.",
         order: 2,
     },
     {
         id: 3,
         src: "/images/forest-city/forest city in contrast with normal city.jpeg",
-        title: "Today + Tomorrow: Integrated",
+        title: "Today & Tomorrow: Integration",
         description:
-        "Clean waterways flow through the city, creating serene landscapes and sustainable transport.",
+        "Today's cities are interconnected with the city of tomorrow. Both exist with and next to each other.",
         order: 1,
     },
     {
@@ -37,23 +37,23 @@ const galleryImages = [
         src: "/images/forest-city/forest city lively market.jpeg",
         title: "Market Place",
         description:
-        "Clean waterways flow through the city, creating serene landscapes and sustainable transport.",
-        order: 6,
+        "A thriving social space where goods are traded and people come together.",
+        order: 7,
     },
     {
         id: 5,
         src: "/images/forest-city/housing in forest city.jpeg",
         title: "Living Space",
         description:
-        "Clean waterways flow through the city, creating serene landscapes and sustainable transport.",
-        order: 7,
+        "This is how residential areas could look like.",
+        order: 4,
     },
     {
         id: 6,
         src: "/images/forest-city/forest city with normal cities in the background.jpeg",
         title: "Big Picture: Interconnected Cities",
         description:
-        "Clean waterways flow through the city, creating serene landscapes and sustainable transport.",
+        "Forest-Cities are spread across Europe, and are connected by intelligent transport systems.",
         order: 10,
     },
     {
@@ -61,31 +61,31 @@ const galleryImages = [
         src: "/images/forest-city/multi-level forest city.jpeg",
         title: "Multi-Level Structure",
         description:
-        "Clean waterways flow through the city, creating serene landscapes and sustainable transport.",
-        order: 4,
+        "Using a system of multiple layers to enhance spatial efficiency by using less space for more use and reduce soil sealing.",
+        order: 3,
     },
     {
         id: 8,
         src: "/images/forest-city/forest city hub-structure.jpeg",
-        title: "Hub Structure",
+        title: "Work Space",
         description:
-        "Clean waterways flow through the city, creating serene landscapes and sustainable transport.",
-        order: 5,
+        "Offices & companies can use the offices here.",
+        order: 6,
     },
     {
         id: 9,
         src: "/images/forest-city/forest city many people.jpeg",
         title: "Touristic Space",
         description:
-        "Clean waterways flow through the city, creating serene landscapes and sustainable transport.",
+        "Tourists and interested people alike can explore and experience the amazing views you get here: A city in a forest!",
         order: 9,
     },
     {
         id: 10,
         src: "/images/forest-city/lively park space.jpeg",
-        title: "Social Park Space",
+        title: "Park Space",
         description:
-        "Clean waterways flow through the city, creating serene landscapes and sustainable transport.",
+        "A normal park, just how you know it: to meet, to play, to spend time with loved ones.",
         order: 8,
     },
 ];
@@ -174,10 +174,12 @@ export default function PossibleFutureVisionPage() {
             </Head>
 
             <h1 className="text-5xl font-bold mb-2 text-center">
-                Vision: Forest-City
+                Vision: A City in a Forest
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 text-center text-gray-800">
-                Humans and nature co-existing peacefully: <span className='italic'>»This could be us.«</span><br></br> A sophisticated vision of human societies living in synergy with nature.
+                A sophisticated vision of human societies living in synergy with nature.<br></br>
+                Imagine living under gigantic trees but in a buzzing city at the same time.<br></br>No question of <span className='text-xl md:text-2xl'>"nature <span className='font-semibold'>or</span> city"</span> anymore.<br></br>Instead, the fusion of <span className='text-xl md:text-2xl bg-white rounded-lg bg-opacity-90 px-3 py-1 mt-2 mb-3'>"nature <span className='font-semibold'>and</span> city."</span><br></br>
+                Humans and nature co-existing peacefully. It <span className='italic'>is</span> possible.
             </p>
 
             <div className="block md:hidden flex items-center justify-center text-sm text-gray-600 italic mx-auto text-center mb-2">
@@ -200,6 +202,16 @@ export default function PossibleFutureVisionPage() {
                     </div>
                 ))}
             </div>
+
+
+            
+            <div className="flex justify-center">
+                <div className="inline-block p-4 rounded-2xl shadow bg-yellow-200 hover:shadow-lg transition text-center">
+                    Version 2 Update coming soon! I got loads of ideas & improvements in mind! Most of them I got through active conversation & discussion with other people. Thank you!
+                </div>
+            </div>
+
+
 
             {/* Modal */}
             {modalIndex !== null && (

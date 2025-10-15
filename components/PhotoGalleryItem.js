@@ -28,7 +28,7 @@ const [isDescriptionOpen, setDescriptionOpen] = useState(false);
         <DropDownDescription
             title={title}
             description={description}
-            isOpen={isDescriptionOpen}      
+            isOpen={true}      
             setIsOpen={setDescriptionOpen}
             wrapperClassName="mb-5"
         />
