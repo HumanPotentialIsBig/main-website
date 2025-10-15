@@ -12,7 +12,7 @@ export default function PhotoGalleryItem({
 const [isDescriptionOpen, setDescriptionOpen] = useState(false);
 
   return (
-    <div className="flex-shrink-0 w-64 mr-6">
+    <div className="flex-shrink-0 w-max mr-6">
       {/* Image */}
       <div
         className="rounded-2xl overflow-hidden shadow-lg cursor-pointer hover:scale-105 hover:shadow-xl transform transition-transform"

@@ -13,7 +13,7 @@ const galleryImages = [
         src: "/images/forest-city/zukunftsvorstellung.jpeg",
         title: "Educational Space",
         description:
-        "Edcuation in the skies: Libraries, schools, lecture halls, book stores, cafes, etc. Imagine your institution up there!",
+        "Edcuation in the skies: Schools, Universities, Libraries, book stores, cafes, etc. Imagine your institution up there!",
         order: 5,
     },
     {
@@ -156,7 +156,7 @@ export default function PossibleFutureVisionPage() {
 
     useEffect(() => {
         if (isMobile && !initialLoad) {
-            setPopTrigger(true);
+            setPopTrigger(false);
             const timeout = setTimeout(() => setPopTrigger(false), 1000); // match animation duration
             return () => clearTimeout(timeout);
         }
@@ -191,7 +191,7 @@ export default function PossibleFutureVisionPage() {
             {/* Horizontal scroll container */}
             <div className="flex flex-wrap justify-center gap-4 overflow-x-auto pb-6 gallery-scroll">
                 {sortedImages.map((img, idx) => (
-                    <div className='flex-shrink-0 w-64 mr-5 mt-2'>
+                    <div className='flex-shrink-0 w-max mr-5 mt-2'>
                         <PhotoGalleryItem
                             key={idx}
                             imageSrc={img.src}
