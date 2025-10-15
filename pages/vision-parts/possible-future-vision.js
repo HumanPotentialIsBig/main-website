@@ -191,7 +191,6 @@ export default function PossibleFutureVisionPage() {
             
             {/** "flex overflow-x-auto pb-6 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100" */}
             {/* Horizontal scroll container */}
-            {/**
             <div className="flex flex-wrap justify-center gap-4 overflow-x-auto pb-6 gallery-scroll">
                 {sortedImages.map((img, idx) => (
                     <div className='flex-shrink-0 w-fit mr-5 mt-2'>
@@ -206,41 +205,11 @@ export default function PossibleFutureVisionPage() {
                     </div>
                 ))}
             </div>
-            */}
-            <div className="w-full pb-6 gallery-scroll">
-                {/* Mobile: horizontal scroll | Desktop: grid */}
-                <div
-                    className="
-                    flex md:grid md:grid-cols-3 lg:grid-cols-4
-                    gap-4 md:gap-6
-                    overflow-x-auto md:overflow-visible
-                    px-4 md:px-0
-                    justify-start md:justify-center
-                    w-fit md:w-full
-                    mx-auto
-                    "
-                >
-                    {sortedImages.map((img, idx) => (
-                    <div
-                        key={idx}
-                        className="flex-shrink-0 w-64 md:w-auto mr-5 md:mr-0 mt-2"
-                    >
-                        <PhotoGalleryItem
-                        imageSrc={img.src}
-                        title={img.title}
-                        description={img.description}
-                        onClick={() => openModal(idx)}
-                        showExtendCollapseButton={false}
-                        />
-                    </div>
-                    ))}
-                </div>
-            </div>
 
             
             <div className="flex justify-center">
                 <div className="inline-block p-4 rounded-2xl shadow bg-yellow-200 hover:shadow-lg transition text-center">
-                    Version 2 Update coming soon! I got loads of ideas & improvements in mind! Most of them I got through active conversation & discussion with other people. Thank you!
+                    <span className='font-bold'>Version 2 Update coming soon!</span><br></br> I've got loads of ideas & improvements in mind! Most of them coming from active conversations & discussions with other people. Thank you!
                 </div>
             </div>
 
