@@ -53,7 +53,7 @@ const galleryImages = [
         src: "/images/forest-city/forest city with normal cities in the background.jpeg",
         title: "Big Picture: Interconnected Cities",
         description:
-        "Forest-Cities are spread across Europe, and are connected by intelligent transport systems.",
+        "Forest-Cities across Europe are connected by intelligent transport systems, allowing them to be in touch",
         order: 10,
     },
     {
@@ -178,7 +178,7 @@ export default function PossibleFutureVisionPage() {
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 text-center text-gray-800">
                 A sophisticated vision of human societies living in synergy with nature.<br></br>
-                Imagine living under gigantic trees but in a buzzing city at the same time.<br></br>No question of <span className='text-xl md:text-2xl'>"nature <span className='font-semibold'>or</span> city"</span> anymore.<br></br>Instead, the fusion of <br></br><span className='text-xl md:text-2xl bg-white rounded-lg bg-opacity-90 px-3 py-1 mt-2 mb-3'>"nature <span className='font-semibold'>and</span> city."</span><br></br>
+                Imagine living under gigantic trees but in a buzzing city at the same time.<br></br><br></br>No question of <span className='text-xl md:text-2xl'>"nature <span className='font-bold'>or</span> city"</span> anymore.<br></br>Instead, the fusion of <br></br><span className='text-xl md:text-2xl bg-white rounded-lg bg-opacity-90 px-3 py-1 mt-2 mb-3'>"nature <span className='font-bold'>and</span> city."</span><br></br>
                 Humans and nature co-existing peacefully. It <span className='italic'>is</span> possible.
             </p>
 
@@ -209,7 +209,7 @@ export default function PossibleFutureVisionPage() {
             
             <div className="flex justify-center">
                 <div className="inline-block p-4 rounded-2xl shadow bg-yellow-200 hover:shadow-lg transition text-center">
-                    <span className='font-bold'>Version 2 Update coming soon!</span><br></br> I've got loads of ideas & improvements in mind! Most of them coming from active conversations & discussions with other people. Thank you!
+                    <span className='font-bold'><span className='underline'>Version 2:</span> update coming soon!</span><br></br> I've got loads of ideas & improvements in mind! Most of them coming from active conversations & discussions with other people. Thank you!
                 </div>
             </div>
 
