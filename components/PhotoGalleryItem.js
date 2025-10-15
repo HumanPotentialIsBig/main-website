@@ -5,7 +5,8 @@ export default function PhotoGalleryItem({
   imageSrc,
   title,
   description,
-  onClick
+  onClick,
+  showExtendCollapseButton=true
 }) {
 
 const [isDescriptionOpen, setDescriptionOpen] = useState(false);
@@ -31,6 +32,7 @@ const [isDescriptionOpen, setDescriptionOpen] = useState(false);
             isOpen={true}      
             setIsOpen={setDescriptionOpen}
             wrapperClassName="mb-5"
+            showExtendCollapseButton={showExtendCollapseButton}
         />
 
     {/**

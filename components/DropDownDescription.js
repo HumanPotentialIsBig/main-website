@@ -6,6 +6,7 @@ export default function DropdownDescription({
     button,
     isOpen,
     setIsOpen,
+    showExtendCollapseButton=true,
     wrapperClassName = "",      // Outer wrapper
     contentClassName = "",      // Dropdown content
 }) {
@@ -26,27 +27,29 @@ export default function DropdownDescription({
       </div>
 
         {/** BUTTON to trigger dropdown description module */}
-        <div className={`flex justify-center ${wrapperClassName}`}>
-            {button ? (
-                    React.cloneElement(button, {
-                        onClick: (e) => {
-                        e.stopPropagation();
-                        setIsOpen(!isOpen);
-                        if (button.props.onClick) button.props.onClick(e); // preserve original onClick
-                    },
-                    })
-                ) : (
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="px-4 py-2 text-sm font-medium text-gray-800 
-                                bg-white/60 backdrop-blur-md rounded-xl 
-                                shadow-md hover:shadow-lg hover:scale-105 
-                                transition-all duration-300"
-                    >
-                        {isOpen ? "Collapse" : title}
-                    </button>
-                )}
-        </div>
+        {showExtendCollapseButton ? (
+            <div className={`flex justify-center ${wrapperClassName}`}>
+                {button ? (
+                        React.cloneElement(button, {
+                            onClick: (e) => {
+                            e.stopPropagation();
+                            setIsOpen(!isOpen);
+                            if (button.props.onClick) button.props.onClick(e); // preserve original onClick
+                        },
+                        })
+                    ) : (
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="px-4 py-2 text-sm font-medium text-gray-800 
+                                    bg-white/60 backdrop-blur-md rounded-xl 
+                                    shadow-md hover:shadow-lg hover:scale-105 
+                                    transition-all duration-300"
+                        >
+                            {isOpen ? "Collapse" : title}
+                        </button>
+                    )}
+            </div>
+        ): null}
       
     </div>
   );

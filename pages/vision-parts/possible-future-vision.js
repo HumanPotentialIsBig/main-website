@@ -198,6 +198,7 @@ export default function PossibleFutureVisionPage() {
                             title={img.title}
                             description={img.description}
                             onClick={() => openModal(idx)} // open modal
+                            showExtendCollapseButton={false}
                         />
                     </div>
                 ))}
