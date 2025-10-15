@@ -191,7 +191,7 @@ export default function PossibleFutureVisionPage() {
             {/* Horizontal scroll container */}
             <div className="flex flex-wrap justify-center gap-4 overflow-x-auto pb-6 gallery-scroll">
                 {sortedImages.map((img, idx) => (
-                    <div className='flex-shrink-0 w-max mr-5 mt-2'>
+                    <div className='flex-shrink-0 w-fit mr-5 mt-2'>
                         <PhotoGalleryItem
                             key={idx}
                             imageSrc={img.src}
