@@ -178,7 +178,7 @@ export default function PossibleFutureVisionPage() {
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-6 text-center text-gray-800">
                 A sophisticated vision of human societies living in synergy with nature.<br></br>
-                Imagine living under gigantic trees but in a buzzing city at the same time.<br></br>No question of <span className='text-xl md:text-2xl'>"nature <span className='font-semibold'>or</span> city"</span> anymore.<br></br>Instead, the fusion of <span className='text-xl md:text-2xl bg-white rounded-lg bg-opacity-90 px-3 py-1 mt-2 mb-3'>"nature <span className='font-semibold'>and</span> city."</span><br></br>
+                Imagine living under gigantic trees but in a buzzing city at the same time.<br></br>No question of <span className='text-xl md:text-2xl'>"nature <span className='font-semibold'>or</span> city"</span> anymore.<br></br>Instead, the fusion of <br></br><span className='text-xl md:text-2xl bg-white rounded-lg bg-opacity-90 px-3 py-1 mt-2 mb-3'>"nature <span className='font-semibold'>and</span> city."</span><br></br>
                 Humans and nature co-existing peacefully. It <span className='italic'>is</span> possible.
             </p>
 
